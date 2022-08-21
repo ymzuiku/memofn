@@ -9,6 +9,7 @@
   },
   "private": false,
   "scripts": {
+    "test": "vitest",
     "esm": "esbuild lib/index.ts --outdir=esm --target=es6  --bundle --platform=node --external:./node_modules/* --external:../node_modules/* --external:../../node_modules/* --format=esm --minify",
     "cjs": "esbuild lib/index.ts --outdir=cjs --target=es6  --bundle --platform=node  --external:./node_modules/* --external:../node_modules/* --external:../../node_modules/* --format=cjs --minify",
     "build": "npm run esm && npm run cjs"
@@ -16,7 +17,8 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/react": "^18.0.10",
-    "react": "^18.1.0"
+    "react": "^18.1.0",
+    "vitest": "^0.22.1"
   },
   "bin": "bin.js",
   "repository": {
