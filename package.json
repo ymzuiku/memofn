@@ -4,12 +4,12 @@
   "main": "lib/index.ts",
   "types": "lib/index.ts",
   "exports": {
-    "import": "./esm/index.mjs",
+    "import": "./esm/index.js",
     "require": "./cjs/index.js"
   },
   "private": false,
   "scripts": {
-    "esm": "esbuild lib/index.ts --outfile=esm/index.mjs --target=es6  --bundle --platform=node --external:./node_modules/* --external:../node_modules/* --external:../../node_modules/* --format=esm --minify",
+    "esm": "esbuild lib/index.ts --outdir=esm --target=es6  --bundle --platform=node --external:./node_modules/* --external:../node_modules/* --external:../../node_modules/* --format=esm --minify",
     "cjs": "esbuild lib/index.ts --outdir=cjs --target=es6  --bundle --platform=node  --external:./node_modules/* --external:../node_modules/* --external:../../node_modules/* --format=cjs --minify",
     "build": "npm run esm && npm run cjs"
   },
